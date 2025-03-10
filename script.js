@@ -10,7 +10,9 @@ input.addEventListener('keydown', function(event) {
         const newPoint = document.createElement('div');
         newPoint.classList.add('point');
         newPoint.textContent = groceryText;
-
+        newPoint.addEventListener('click', function() {
+            newPoint.classList.toggle('decoration');
+        })
         if (groceryText != '') {
             items.append(newPoint);
         }
@@ -19,11 +21,8 @@ input.addEventListener('keydown', function(event) {
     }
 })
 
-for (const item of groceryText) {
-    item.addEventListener('click', function() {
-        item.classList.toggle('decoration');
-    })
-}
+
+
 
 /* Пустые элементы не должны добавляться */
 
